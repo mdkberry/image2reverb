@@ -9,5 +9,8 @@
 /datasets/image2reverb/val_A/
 /datasets/image2reverb/val_B/
 
+#system folders to ignore
+*/__pycache__/*
+
 # Files to ignore
 *AGENT.md*

@@ -61,7 +61,12 @@ This script will:
 
 ### Required Pre-trained Models
 
-You'll need to download the following pre-trained models:
+The required pre-trained models should be placed in the `models` folder:
+1. Places365 ResNet50 model: `models/resnet50_places365.pth.tar`
+2. Monodepth2 models: `models/mono_640x192/` folder containing `encoder.pth` and `depth.pth`
+3. Image2Reverb checkpoint: `models/model.ckpt`
+
+If you haven't already downloaded these models, you can get them from:
 1. Places365 ResNet50 model: http://places2.csail.mit.edu/models_places365/resnet50_places365.pth.tar
 2. Monodepth2 models: From https://github.com/nianticlabs/monodepth2
 3. Image2Reverb checkpoint: https://media.mit.edu/~nsingh1/image2reverb/model.ckpt

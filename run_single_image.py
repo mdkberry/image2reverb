@@ -14,9 +14,9 @@ def main():
     parser = argparse.ArgumentParser(description="Generate impulse response from a single image")
     parser.add_argument("--image_path", type=str, required=True, help="Path to input image")
     parser.add_argument("--output_dir", type=str, default="./output", help="Output directory for results")
-    parser.add_argument("--encoder_path", type=str, default="resnet50_places365.pth.tar", help="Path to pre-trained Encoder ResNet50 model")
-    parser.add_argument("--depthmodel_path", type=str, default="mono_odom_640x192", help="Path to pre-trained depth (from monodepth2) encoder and decoder models")
-    parser.add_argument("--model_path", type=str, default="model.ckpt", help="Path to pretrained Image2Reverb model")
+    parser.add_argument("--encoder_path", type=str, default="models/resnet50_places365.pth.tar", help="Path to pre-trained Encoder ResNet50 model")
+    parser.add_argument("--depthmodel_path", type=str, default="models/mono_640x192", help="Path to pre-trained depth (from monodepth2) encoder and decoder models")
+    parser.add_argument("--model_path", type=str, default="models/model.ckpt", help="Path to pretrained Image2Reverb model")
     args = parser.parse_args()
 
     # Create temporary dataset structure
