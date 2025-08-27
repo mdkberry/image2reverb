@@ -2,7 +2,9 @@
 
 ## LATEST INFORMATION:
 
-Adaptation underway to see if it can be used to work with Comfyui for image or ideally video ambience when applying audio to a scene clip created in comfyui. I would recommend not installing this version at this stage while it is being worked on. I will post updates here if it becomes something I think is going to be useful and useable - mdkberry (August 2025)
+Consider the main repo the dev environment and things could break and be left in that state for a while.
+
+Adaptation is underway to see if it can be used to work with Comfyui for image or ideally video ambience when applying audio to a scene clip created in comfyui. I would recommend not installing this version at this stage while it is being worked on. I will post updates here if it becomes something I think is going to be useful and useable - mdkberry (August 2025)
 
 ---
 
@@ -18,24 +20,8 @@ Code for the ICCV 2021 paper [[arXiv]](https://arxiv.org/abs/2103.14201). Image2
 
 ## Dependencies
 
-**Model/Data:**
+Updated to work in a conda environment and use pytorch 2.7 and CUDA 12.8, see requirements.txt and environment.yml for more information
 
-* PyTorch>=1.7.0
-* PyTorch Lightning
-* torchvision
-* torchaudio
-* librosa
-* PyRoomAcoustics
-* PIL
-
-**Eval/Preprocessing:**
-
-* PySoundfile
-* SciPy
-* Scikit-Learn
-* python-acoustics
-* google-images-download
-* matplotlib
 
 ## Image Requirements
 
