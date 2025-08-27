@@ -93,24 +93,48 @@ Here are some examples of the Image2Reverb model's output for different environm
 ![Alley Input](datasets/examples/alley-1/test/input.png)
 ![Alley Depth](datasets/examples/alley-1/test/depth.png)
 ![Alley Spectrogram](datasets/examples/alley-1/test/spec.png)
+
+<audio controls>
+  <source src="datasets/examples/alley-1/test/test.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
 [Alley Impulse Response (WAV)](datasets/examples/alley-1/test/test.wav)
 
 ### Cathedral
 ![Cathedral Input](datasets/examples/cathedral-1/test/input.png)
 ![Cathedral Depth](datasets/examples/cathedral-1/test/depth.png)
 ![Cathedral Spectrogram](datasets/examples/cathedral-1/test/spec.png)
+
+<audio controls>
+  <source src="datasets/examples/cathedral-1/test/test.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
 [Cathedral Impulse Response (WAV)](datasets/examples/cathedral-1/test/test.wav)
 
 ### Bedroom
 ![Bedroom Input](datasets/examples/bedroom-1/test/input.png)
 ![Bedroom Depth](datasets/examples/bedroom-1/test/depth.png)
 ![Bedroom Spectrogram](datasets/examples/bedroom-1/test/spec.png)
+
+<audio controls>
+  <source src="datasets/examples/bedroom-1/test/test.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
 [Bedroom Impulse Response (WAV)](datasets/examples/bedroom-1/test/test.wav)
 
 ### Empty Field
 ![Empty Field Input](datasets/examples/empty-field-1/test/input.png)
 ![Empty Field Depth](datasets/examples/empty-field-1/test/depth.png)
 ![Empty Field Spectrogram](datasets/examples/empty-field-1/test/spec.png)
+
+<audio controls>
+  <source src="datasets/examples/empty-field-1/test/test.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
 [Empty Field Impulse Response (WAV)](datasets/examples/empty-field-1/test/test.wav)
 
 ## Resources
