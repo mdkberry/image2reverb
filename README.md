@@ -85,6 +85,34 @@ To use the generated impulse response:
 
 The model has successfully converted your 2D image of a room into a realistic 3D acoustic simulation in the form of an impulse response audio file.
 
+## Examples
+
+Here are some examples of the Image2Reverb model's output for different environments:
+
+### Alley
+![Alley Input](datasets/examples/alley-1/test/input.png)
+![Alley Depth](datasets/examples/alley-1/test/depth.png)
+![Alley Spectrogram](datasets/examples/alley-1/test/spec.png)
+[Alley Impulse Response (WAV)](datasets/examples/alley-1/test/test.wav)
+
+### Cathedral
+![Cathedral Input](datasets/examples/cathedral-1/test/input.png)
+![Cathedral Depth](datasets/examples/cathedral-1/test/depth.png)
+![Cathedral Spectrogram](datasets/examples/cathedral-1/test/spec.png)
+[Cathedral Impulse Response (WAV)](datasets/examples/cathedral-1/test/test.wav)
+
+### Bedroom
+![Bedroom Input](datasets/examples/bedroom-1/test/input.png)
+![Bedroom Depth](datasets/examples/bedroom-1/test/depth.png)
+![Bedroom Spectrogram](datasets/examples/bedroom-1/test/spec.png)
+[Bedroom Impulse Response (WAV)](datasets/examples/bedroom-1/test/test.wav)
+
+### Empty Field
+![Empty Field Input](datasets/examples/empty-field-1/test/input.png)
+![Empty Field Depth](datasets/examples/empty-field-1/test/depth.png)
+![Empty Field Spectrogram](datasets/examples/empty-field-1/test/spec.png)
+[Empty Field Impulse Response (WAV)](datasets/examples/empty-field-1/test/test.wav)
+
 ## Resources
 
 [Model Checkpoint](https://media.mit.edu/~nsingh1/image2reverb/model.ckpt)
