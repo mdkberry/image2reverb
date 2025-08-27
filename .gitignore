@@ -8,6 +8,7 @@
 /datasets/image2reverb/train_B/
 /datasets/image2reverb/val_A/
 /datasets/image2reverb/val_B/
+/results/
 
 #system folders to ignore
 */__pycache__/*

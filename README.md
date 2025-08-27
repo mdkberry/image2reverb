@@ -71,6 +71,32 @@ If you haven't already downloaded these models, you can get them from:
 2. Monodepth2 models: From https://github.com/nianticlabs/monodepth2
 3. Image2Reverb checkpoint: https://media.mit.edu/~nsingh1/image2reverb/model.ckpt
 
+### On successful run of Single image script
+
+Here's what each of the generated files contains and how to use them:
+
+1. **results/test/test.wav**: This is the main output - the impulse response (IR) audio file generated from your input image. This file simulates how sound would reverberate in the environment depicted by your image. You can use this IR in audio processing software or digital audio workstations (DAWs) to apply realistic reverb to your audio.
+
+2. **results/test/input.png**: This is a visualization of your input image as processed by the model. It may include some preprocessing or modifications made by the model.
+
+3. **results/test/depth.png**: This shows the estimated depth map of your input image, which the model uses to understand the 3D structure of the environment.
+
+4. **results/test/spec.png**: This is a visualization of the spectrogram of the generated impulse response, showing how the frequency content of the reverb changes over time.
+
+5. **results/t60.json**: Contains RT60 values (reverberation times) for different frequency bands. RT60 is the time it takes for sound to decay by 60dB, which is an important acoustic parameter.
+
+6. **results/t60.png**: A graphical representation of the RT60 values in a box plot.
+
+7. **results/t60_err.npy**: Numerical data about the T60 error metrics.
+
+To use the generated impulse response:
+1. Take the `test.wav` file from the `results/test/` directory
+2. Import it into your audio software or DAW
+3. Use it as an impulse response in a convolution reverb plugin
+4. Process your dry audio with the reverb to simulate the acoustics of the environment in your input image
+
+The model has successfully converted your 2D image of a room into a realistic 3D acoustic simulation in the form of an impulse response audio file.
+
 ## Resources
 
 [Model Checkpoint](https://media.mit.edu/~nsingh1/image2reverb/model.ckpt)
