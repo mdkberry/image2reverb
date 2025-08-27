@@ -61,19 +61,20 @@ def main():
     )
     
     trainer = Trainer(
-        gpus=args.n_gpus if cuda else None,
-        auto_select_gpus=True,
-        accelerator="ddp" if cuda else None,
+        devices=args.n_gpus if cuda else None,
+        accelerator="gpu" if cuda else None,
         auto_scale_batch_size="binsearch",
         benchmark=True,
         max_epochs=args.niter,
-        resume_from_checkpoint=args.from_pretrained,
         default_root_dir=args.checkpoints_dir,
         callbacks=[checkpoint_callback],
         logger=logger
     )
     
-    trainer.fit(model, train_dataset, val_dataset)
+    if args.from_pretrained:
+        trainer.fit(model, train_dataset, val_dataset, ckpt_path=args.from_pretrained)
+    else:
+        trainer.fit(model, train_dataset, val_dataset)
 
 
 if __name__ == "__main__":

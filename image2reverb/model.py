@@ -38,6 +38,8 @@ class Image2Reverb(pl.LightningModule):
         self.d = Discriminator(365, spec == "mel")
         self.validation_inputs = []
         self.stft_type = spec
+        self.test_outputs = []
+        self.validation_outputs = []
 
     def forward(self, x):
         f = self.enc.forward(x)[0]
@@ -124,9 +126,12 @@ class Image2Reverb(pl.LightningModule):
         except:
             pass
 
-        return {"val_t60err": val_pct, "val_spec": fake_spec, "val_audio": torch.Tensor(y_f), "val_img": label, "val_examples": examples}
+        result = {"val_t60err": val_pct, "val_spec": fake_spec, "val_audio": torch.Tensor(y_f), "val_img": label, "val_examples": examples}
+        self.validation_outputs.append(result)
+        return result
     
-    def validation_epoch_end(self, outputs):
+    def on_validation_epoch_end(self):
+        outputs = self.validation_outputs
         if not len(outputs):
             return
         # Log mean T60 errors (in percentages)
@@ -178,12 +183,15 @@ class Image2Reverb(pl.LightningModule):
             except:
                 val_pct.append(numpy.nan)
 
-        return {"test_t60err": val_pct, "test_spec": fake_spec, "test_audio": y_f, "test_img": img, "test_examples": examples}
+        result = {"test_t60err": val_pct, "test_spec": fake_spec, "test_audio": y_f, "test_img": img, "test_examples": examples}
+        self.test_outputs.append(result)
+        return result
     
-    def test_epoch_end(self, outputs):
+    def on_test_epoch_end(self):
         if not self.test_callback:
             return
             
+        outputs = self.test_outputs
         examples = []
         t60 = []
         spec_images = []

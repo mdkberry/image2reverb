@@ -39,9 +39,10 @@ def main():
     
     # Create a dummy audio file in test_B folder (required by the dataset loader)
     dummy_audio_path = os.path.join(test_B_dir, os.path.splitext(image_name)[0] + ".wav")
-    # Create 1 second of silence at 22050 Hz
-    silence = np.zeros(22050)
-    sf.write(dummy_audio_path, silence, 22050)
+    # Create a small impulse signal at 22050 Hz
+    impulse = np.zeros(22050)
+    impulse[0] = 1.0  # Single impulse at the beginning
+    sf.write(dummy_audio_path, impulse, 22050)
     
     print(f"Image copied to {temp_image_path}")
     print(f"Dummy audio created at {dummy_audio_path}")

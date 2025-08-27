@@ -75,11 +75,11 @@ def main():
 
     # Main model
     model = Image2Reverb(args.encoder_path, args.depthmodel_path, constant_depth=args.constant_depth, test_callback=test_fn)
-    m = torch.load(args.model, map_location=model.device)
+    m = torch.load(args.model, map_location=model.device, weights_only=False)
     model.load_state_dict(m["state_dict"])
     
     # Model training
-    trainer = Trainer(gpus=1, limit_test_batches=args.n_test)
+    trainer = Trainer(devices=1, limit_test_batches=args.n_test)
     trainer.test(model, test_dataset)
 
 

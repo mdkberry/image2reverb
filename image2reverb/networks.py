@@ -17,7 +17,7 @@ class Encoder(nn.Module):
         self.model = models.resnet50(num_classes=365)
 
         if model_weights:
-            c = torch.load(model_weights, map_location=self.device)
+            c = torch.load(model_weights, map_location=self.device, weights_only=False)
             state_dict = {k.replace("module.", ""): v for k, v in c["state_dict"].items()}
             self.model.load_state_dict(state_dict)
         
@@ -30,7 +30,7 @@ class Encoder(nn.Module):
             encoder_path = os.path.join(depth_model, "encoder.pth")
             depth_decoder_path = os.path.join(depth_model, "depth.pth")
             self.depth_encoder = ResnetEncoder(18, False)
-            loaded_dict_enc = torch.load(encoder_path, map_location=self.device)
+            loaded_dict_enc = torch.load(encoder_path, map_location=self.device, weights_only=False)
 
             self.feed_height = loaded_dict_enc["height"]
             self.feed_width = loaded_dict_enc["width"]
@@ -40,7 +40,7 @@ class Encoder(nn.Module):
             self.depth_encoder.eval()
 
             self.depth_decoder = DepthDecoder(num_ch_enc=self.depth_encoder.num_ch_enc, scales=range(4))
-            loaded_dict = torch.load(depth_decoder_path, map_location=self.device)
+            loaded_dict = torch.load(depth_decoder_path, map_location=self.device, weights_only=False)
             self.depth_decoder.load_state_dict(loaded_dict, strict=False)
             self.depth_decoder.to(self.device)
             self.depth_decoder.eval()
@@ -262,7 +262,7 @@ class ResnetEncoder(nn.Module):
             raise ValueError("{} is not a valid number of resnet layers".format(num_layers))
 
         if num_input_images > 1:
-            self.encoder = resnet_multiimage_input(num_layers, pretrained, num_input_images)
+            raise NotImplementedError("Multi-image input is not implemented")
         else:
             self.encoder = resnets[num_layers](pretrained)
 
