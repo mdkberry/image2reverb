@@ -2,7 +2,9 @@
 
 ## LATEST INFORMATION:
 
-Consider the main repo the dev environment and things could break and be left in that state for a while.
+***WARNING THIS IS NOT SUPPORTED DURING DEVELOPMENT AND YOU USE IT AT YOUR OWN RISK***
+
+Consider the main repo the dev environment and things could break and be left in that state for a while. I'm hobbyist messing about with this to see if it can speed up sound stage duties for short videos in Comfyui. It tested working for one shot image results, but needs some more work.
 
 Adaptation is underway to see if it can be used to work with Comfyui for image or ideally video ambience when applying audio to a scene clip created in comfyui. I would recommend not installing this version at this stage while it is being worked on. I will post updates here if it becomes something I think is going to be useful and useable - mdkberry (August 2025)
 
