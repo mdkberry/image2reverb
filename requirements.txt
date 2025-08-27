@@ -1,0 +1,13 @@
+torch>=1.7.0
+torchvision
+torchaudio
+pytorch-lightning
+librosa
+PyRoomAcoustics
+Pillow
+soundfile
+scipy
+scikit-learn
+matplotlib
+numpy
+seaborn

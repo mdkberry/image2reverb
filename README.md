@@ -1,5 +1,11 @@
 # Image2Reverb
 
+## LATEST INFORMATION:
+
+Adaptation underway to see if it can be used to work with Comfyui for image or ideally video ambience when applying audio to a scene clip created in comfyui. I would recommend not installing this version at this stage while it is being worked on. I will post updates here if it becomes something I think is going to be useful and useable - mdkberry (August 2025)
+
+---
+
 #### Image2Reverb: Cross-Modal Reverb Impulse Response Synthesis
 Nikhil Singh, Jeff Mentch, Jerry Ng, Matthew Beveridge, Iddo Drori
 
@@ -31,6 +37,34 @@ Code for the ICCV 2021 paper [[arXiv]](https://arxiv.org/abs/2103.14201). Image2
 * google-images-download
 * matplotlib
 
+## Image Requirements
+
+* Images should be 512x512 pixels for best results
+* Supported formats: JPG, PNG, BMP, TIFF
+
+## Usage
+
+### Running on a Single Image
+
+To generate an impulse response from a single image, you can use the provided `run_single_image.py` script:
+
+```bash
+python run_single_image.py --image_path path/to/your/image.jpg --output_dir ./results
+```
+
+This script will:
+1. Resize your image to 512x512 pixels if needed
+2. Create a temporary dataset structure
+3. Run the model on your image
+4. Save the results in the specified output directory
+5. Clean up temporary files
+
+### Required Pre-trained Models
+
+You'll need to download the following pre-trained models:
+1. Places365 ResNet50 model: http://places2.csail.mit.edu/models_places365/resnet50_places365.pth.tar
+2. Monodepth2 models: From https://github.com/nianticlabs/monodepth2
+3. Image2Reverb checkpoint: https://media.mit.edu/~nsingh1/image2reverb/model.ckpt
 
 ## Resources
 
